@@ -17,17 +17,7 @@ public class Data {
 
 	private Map<String, String> replacementMap = new HashMap<String, String>();
 
-	private Map<String, Integer> keyword = new HashMap<String, Integer>();// 1
-																			// positive
-																			// ,
-																			// 2
-																			// negative
-																			// ,
-																			// 0
-																			// neutral,
-																			// -1
-																			// not
-																			// exist
+	private Map<String, Integer> keyword = new HashMap<String, Integer>();
 
 	public int addKeyword(String key, int value) {
 		return keyword.put(key, value);
@@ -53,6 +43,11 @@ public class Data {
 		replacementMap.put("me", "you");
 		replacementMap.put("my", "your");
 		replacementMap.put("am", "are");
+		replacementMap.put("mine", "yours");
+		replacementMap.put("we", "you");
+		replacementMap.put("us","you");
+		replacementMap.put("our", "your");
+		replacementMap.put("ours", "yours");
 
 		// get the positive words from file
 		try {
@@ -78,7 +73,7 @@ public class Data {
 			e.printStackTrace();
 		}
 	}
-
+	// -1 - Not exist, 1 - positive, 2 - negative
 	public int getIfExists(String word) {
 		for (String key : keyword.keySet()) {
 			if (key.equalsIgnoreCase(word)) {
@@ -151,5 +146,9 @@ public class Data {
 	
 	public String getHedge(){
 		return randomSet(hedgeSet);
+	}
+	
+	public String getSalutation(){
+		return randomSet(salutationSet);
 	}
 }
