@@ -139,6 +139,26 @@ public class History extends RachaelFunction{
 		
 		
 	}
-	
+	public String quit(String resp)
+	{
+		for(int i=1;i<=4;i++)
+		{
+			if(resp.equalsIgnoreCase("quit") && ((i==1)||(i==2)||(i==3)))
+				System.out.println(qualMap.get(i)+HistQuestions(resp));
+			else
+			{
+				System.out.println("I am glad you decided to stay");
+				r.Interaction(resp);
+			}
+
+			if(resp.equalsIgnoreCase("quit") && (i==4))
+			{
+				System.out.println("Hmm.. if you really want to leave then alright.");
+				System.out.println("Wait!! dont leave already. You still have to pay me for this session. The cost for today's session will be  " +cost());
+				System.out.println("Bye! See you next time. Until then try to stay positive and be Happy :)");
+				
+			}
+		}
+	}
 
 }

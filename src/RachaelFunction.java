@@ -4,13 +4,11 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class RachaelFunction extends RachaelData
+public class RachaelFunction extends Data
 
 {
-	
 	Rachael r = new Rachael();
-	History h = new History();
-	
+
 	private HashMap<Integer, String> qualMap = new HashMap<Integer, String>();
 
 	protected ArrayList<String> logList = new ArrayList<String>();
@@ -61,26 +59,6 @@ public class RachaelFunction extends RachaelData
 		return cost;
 	}
 	
-	public String quit(String resp)
-	{
-		for(int i=1;i<=4;i++)
-		{
-			if(resp.equalsIgnoreCase("quit") && ((i==1)||(i==2)||(i==3)))
-				System.out.println(qualMap.get(i)+h.HistQuestions(resp));
-			else
-			{
-				System.out.println("I am glad you decided to stay");
-				r.Interaction(resp);
-			}
 
-			if(resp.equalsIgnoreCase("quit") && (i==4))
-			{
-				System.out.println("Hmm.. if you really want to leave then alright.");
-				System.out.println("Wait!! dont leave already. You still have to pay me for this session. The cost for today's session will be  " +cost());
-				System.out.println("Bye! See you next time. Until then try to stay positive and be Happy :)");
-				
-			}
-		}
-	}
 
 }
