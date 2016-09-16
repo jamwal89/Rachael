@@ -147,4 +147,8 @@ public class Data {
 	public String getHedge(){
 		return randomSet(hedgeSet);
 	}
+	
+	public String getSalutation(){
+		return randomSet(salutationSet);
+	}
 }
